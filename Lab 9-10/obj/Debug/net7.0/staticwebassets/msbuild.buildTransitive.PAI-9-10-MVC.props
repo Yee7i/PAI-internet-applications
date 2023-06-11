@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PAI-9-10-MVC.props" />
+</Project>

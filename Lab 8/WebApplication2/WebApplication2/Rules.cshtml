@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+@{
+    if(Session["rules"] == null)
+    {
+        Session["rules"] = new List<string>();
+    }
+
+    List<string> reguly = Session["rules"] as List<string>;
+
+    if(Request["rule"] != null && Request["rule"] != "")
+    {
+        reguly.Add(Request["rule"]);
+    }
+}
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form method="get">
+        <input type="text" name="rule" />
+        <input type="submit" />
+    </form>
+    <h1>Reguly:</h1>    
+    <ul>
+        @foreach (string regula in reguly)
+        {
+            <li>@regula</li>
+        }
+    </ul>
+</body>
+</html>
